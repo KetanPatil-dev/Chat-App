@@ -46,3 +46,39 @@ if(newUser)
     return res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
+
+export const Login=async(req ,res)=>{
+    try{
+        const {email,password}=req.body
+
+        const user=await UserModel.findOne({email})
+        if(!user)
+        {
+            return res.status(404).json({message:"Invalid Email"})
+        }
+        const correctPassword= await bcrypt.compare(password,user.password)
+        if(!correctPassword)
+        {
+            return res.status(401).json({message:"Invalid Password"})
+        }
+        generateToken(user._id,res)
+        const {password:_,...userData}=user.toObject()
+        return res.status(200).json({success:true,message:"Login Successful",userData})
+
+    } catch(error)
+    {
+        console.error("Login Error:", error);
+    return res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+}
+
+export const Logout=async(req,res)=>{
+    try {
+        res.clearCookie("token")
+        return res.status(201).json({message:"Logout Successful"})
+        
+    } catch (error) {
+        console.error("Logout Error:", error);
+    return res.status(500).json({ success: false, message: "Internal Server Error" });
+    }
+}
