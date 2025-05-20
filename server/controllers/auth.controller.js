@@ -102,7 +102,8 @@ export const UpdateProfile=async(req,res)=>{
 }
 export const checkAuth=async(req,res)=>{
     try {
-        return res.status(200).json(req.user)
+        const {password:_,...userData}=req.user.toObject()
+        return res.status(200).json(userData)
         
     } catch (error) {
         console.error("Check Auth Error:", error);

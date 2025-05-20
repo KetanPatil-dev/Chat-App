@@ -1,8 +1,10 @@
 import UserModel from "../models/user.model.js"
+import jwt from "jsonwebtoken"
 
-export const protectRoute=async(req ,resizeBy,next)=>{
+export const protectRoute=async(req ,res,next)=>{
     try {
         const token= req.cookies.token
+        
         if(!token)
         {
             return res.status(404).json({message:"Unauthorized- No Token Found"})
