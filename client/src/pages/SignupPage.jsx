@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useAuthStore } from '../store/userAuthStore';
-import { MessageSquare, User, Mail, Eye, EyeOff, Lock, Loader } from 'lucide-react'; // Import all needed icons
-import { User2 } from 'lucide-react';
+import { MessageSquare, User, Mail, Eye, EyeOff, Lock, Loader,ArrowBigRight } from 'lucide-react'; // Import all needed icons
+import { Link } from 'react-router-dom';
+import AuthImagePattern from '../components/AuthImagePattern';
 const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -119,10 +120,16 @@ const SignupPage = () => {
               {isSigningUp ? <>Loading... <Loader className='animate-spin'/></>: "Create Account"}
             </button>
           </form>
+        <Link to="/login"><p className='mt-2 flex justify-center hover:text-orange-800 cursor-pointer'>Already have an account? Login <ArrowBigRight/></p></Link>
         </div>
       </div>
       {/* Right side (optional) */}
-      <div className='hidden lg:block bg-base-200'></div>
+      <div className='hidden lg:block bg-base-200'>
+        <AuthImagePattern
+        title="Join Us"
+        subtitle="Chat with friends, family and always stay connected."
+        />
+      </div>
     </div>
   );
 };
