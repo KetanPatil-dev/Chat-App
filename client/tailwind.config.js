@@ -1,13 +1,35 @@
 import daisyui from "daisyui"
-
-/** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx}", // adjust paths to your project
   ],
   theme: {
     extend: {},
   },
-  plugins: [daisyui],
-}
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      "light",
+      "dark",
+      "cupcake",
+      "forest",
+      "garden",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "wireframe",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+    ],
+  },
+};
