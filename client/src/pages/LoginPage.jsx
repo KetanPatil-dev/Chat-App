@@ -102,7 +102,7 @@ const handleSubmit=(e)=>{
             </button>
           </form>
           <Link to="/signup">
-            <p className='mt-2 flex justify-center hover:text-orange-800 cursor-pointer'>
+            <p className='mt-5 flex justify-center hover:text-black cursor-pointer'>
               Dont have an account? Sign Up <ArrowBigRight />
             </p>
           </Link>

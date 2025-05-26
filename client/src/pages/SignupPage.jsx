@@ -120,7 +120,7 @@ const SignupPage = () => {
               {isSigningUp ? <>Loading... <Loader className='animate-spin'/></>: "Create Account"}
             </button>
           </form>
-        <Link to="/login"><p className='mt-2 flex justify-center hover:text-orange-800 cursor-pointer'>Already have an account? Login <ArrowBigRight/></p></Link>
+        <Link to="/login"><p className='mt-5 flex justify-center hover:text-black cursor-pointer'>Already have an account? Login <ArrowBigRight/></p></Link>
         </div>
       </div>
       {/* Right side (optional) */}
