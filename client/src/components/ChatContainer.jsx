@@ -1,10 +1,9 @@
 import { useChatStore } from "../store/useChatStore";
 import { useEffect, useRef } from "react";
-
-
-
-
 import { useAuthStore } from "../store/userAuthStore";
+import MessageInput from "./MessageInput";
+import ChatHeader from "./ChatHeader";
+import MessageSkeleton from "./skeletons/MessageSkeleton";
 
 const ChatContainer = () => {
   const {
@@ -12,19 +11,14 @@ const ChatContainer = () => {
     getMessages,
     isMessagesLoading,
     selectedUser,
-    subscribeToMessages,
-    unsubscribeFromMessages,
+    
   } = useChatStore();
   const { authUser } = useAuthStore();
   const messageEndRef = useRef(null);
 
   useEffect(() => {
     getMessages(selectedUser._id);
-
-    subscribeToMessages();
-
-    return () => unsubscribeFromMessages();
-  }, [selectedUser._id, getMessages, subscribeToMessages, unsubscribeFromMessages]);
+  }, [selectedUser._id, getMessages,]);
 
   useEffect(() => {
     if (messageEndRef.current && messages) {
@@ -67,7 +61,7 @@ const ChatContainer = () => {
             </div>
             <div className="chat-header mb-1">
               <time className="text-xs opacity-50 ml-1">
-                {formatMessageTime(message.createdAt)}
+
               </time>
             </div>
             <div className="chat-bubble flex flex-col">

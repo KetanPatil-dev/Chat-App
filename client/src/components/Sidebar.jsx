@@ -7,7 +7,7 @@ import { useAuthStore } from "../store/userAuthStore";
 
 const Sidebar = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } = useChatStore();
-const onlineUsers=[]
+const {onlineUsers}=useAuthStore()
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
 
   useEffect(() => {
