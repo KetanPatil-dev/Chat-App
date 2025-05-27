@@ -52,8 +52,8 @@ const ChatContainer = () => {
                 <img
                   src={
                     message.senderId === authUser._id
-                      ? authUser.profilePic || "/avatar.png"
-                      : selectedUser.profilePic || "/avatar.png"
+                      ? authUser.profilePic || "/avatar.avif"
+                      : selectedUser.profilePic || "/avatar.avif"
                   }
                   alt="profile pic"
                 />
@@ -61,7 +61,7 @@ const ChatContainer = () => {
             </div>
             <div className="chat-header mb-1">
               <time className="text-xs opacity-50 ml-1">
-
+{new Date(message.createdAt).toLocaleDateString("en-Us",{day:"2-digit",month:'long',year:"numeric"})}
               </time>
             </div>
             <div className="chat-bubble flex flex-col">
