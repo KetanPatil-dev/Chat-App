@@ -5,10 +5,11 @@ import AuthRoutes from "./routes/auth.routes.js";
 import cookieParser from "cookie-parser";
 import MessageRoutes from "./routes/message.routes.js";
 import cors from "cors"
+import { app,server } from "./lib/socket.js";
 dotenv.config();
 
 const PORT = process.env.PORT || 9090;
-const app = express();
+
 
 // Middlewares
 app.use(express.json({limit:"20mb"}));
@@ -26,7 +27,7 @@ app.use("/api/message", MessageRoutes);
 const Start = async () => {
   try {
     await ConnectDB(); // Await DB connection
-    app.listen(PORT, () => console.log(`Server Started on PORT:${PORT}`));
+    server.listen(PORT, () => console.log(`Server Started on PORT:${PORT}`));
   } catch (error) {
     console.log("Server failed to start:", error);
     process.exit(1); // Exit on failure

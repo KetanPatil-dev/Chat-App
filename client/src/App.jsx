@@ -13,10 +13,11 @@ import "react-toastify/dist/ReactToastify.css";
 import { Loader } from "lucide-react";
 
 function App() {
-  const { authUser,isCheckingAuth,checkAuth } = useAuthStore();
+  const { authUser,isCheckingAuth,checkAuth,} = useAuthStore();
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
+ 
   if(isCheckingAuth && !authUser)
   {
     return (
