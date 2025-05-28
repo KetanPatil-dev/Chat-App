@@ -1,4 +1,4 @@
-Chat-App (MERN Stack + WebSocket)
+# Chat-App (MERN Stack + WebSocket)
 A real-time chat application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.IO for instant messaging and online status updates.
 
 🚀 Features
