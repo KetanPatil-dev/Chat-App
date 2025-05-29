@@ -5,6 +5,8 @@ A real-time chat application built with the MERN stack (MongoDB, Express.js, Rea
 
 ![image alt](https://github.com/KetanPatil-dev/Chat-App/blob/2882a10371cddbb286d0700b36e3b967f7da41dc/Images/Screenshot%202025-05-28%20at%209.46.06%E2%80%AFPM.png)
 
+![image alt](https://github.com/KetanPatil-dev/Chat-App/blob/b0e7bde0f91dc1f9b865650ff16c2f77298c24df/Images/Screenshot%202025-05-28%20at%209.46.57%E2%80%AFPM.png)
+
 🚀 Features
 -User Authentication (Sign Up, Login, Logout)
 
